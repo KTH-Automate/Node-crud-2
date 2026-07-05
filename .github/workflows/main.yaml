@@ -56,6 +56,11 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        shell: bash
+        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+
       - name: Restore node_modules cache
         id: restore
         uses: actions/cache@v6

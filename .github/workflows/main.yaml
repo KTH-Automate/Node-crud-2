@@ -58,7 +58,7 @@ jobs:
 
       - name: Restore node_modules cache
         id: restore
-        uses: actions/cache/restore@v5
+        uses: actions/cache@v6
         with:
           path: ${{ steps.npm-cache-dir.outputs.dir }}
           key: ${{ runner.os }}-node-${{ github.sha }}

@@ -78,7 +78,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ github.sha }}
       
       - name: Install dependencies
-        if: steps.restore.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Create .env file

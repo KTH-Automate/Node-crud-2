@@ -62,10 +62,12 @@ JWT_EXPIRES_IN=24h
 
 ### 3. Spin up PostgreSQL Database
 
-Use Docker Compose to run the PostgreSQL server locally:
+Use cmd from makefile to run the PostgreSQL server locally:
 
 ```bash
-docker compose up -d
+docker pull postgres
+
+make psqlup
 ```
 
 This starts PostgreSQL in the background on port `5432` with database `node_crud_db`.

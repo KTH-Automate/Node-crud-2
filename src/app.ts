@@ -12,6 +12,14 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
+app.get('/api/dummy', (req, res) => {
+  res.status(200).json({ 
+    message: 'Dummy API endpoint for CI testing',
+    version: '1.0.0',
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/items', itemRoutes);
 

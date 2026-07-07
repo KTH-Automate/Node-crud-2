@@ -1,0 +1,10 @@
+name: QA workflow
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: "Build the application"
+    uses: ./.github/workflows/build.yaml
+    with:
+      version: '23'

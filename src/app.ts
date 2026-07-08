@@ -12,7 +12,7 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-app.get('/api/dummy', (req, res) => {
+app.get('/api/dummies', (req, res) => {
   res.status(200).json({ 
     message: 'Dummy API endpoint for CI testing',
     version: '1.0.0',

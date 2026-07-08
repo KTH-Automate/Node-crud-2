@@ -7,4 +7,4 @@ jobs:
     name: "Build the application"
     uses: ./.github/workflows/build.yaml
     with:
-      version: '23'
+      version: '24'

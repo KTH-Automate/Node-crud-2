@@ -23,6 +23,9 @@ jobs:
           - 5432:5432
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
       - name: Prepare environment
         uses: ./.github/actions/prepare-action/action.yaml
         with:

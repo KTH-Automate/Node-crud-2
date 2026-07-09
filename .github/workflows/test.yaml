@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Prepare environment
-        uses: ./.github/prepare-action/action.yaml
+        uses: ./.github/actions/prepare-action/action.yaml
         with:
           version: ${{ inputs.version }}
 

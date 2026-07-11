@@ -1,6 +1,12 @@
 name: Test workflow
 
-on: workflow_call
+on: 
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+        default: '24'
 
 jobs:
   test:
@@ -20,10 +26,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      - name: Prepare environment
+        uses: ./.github/actions/prepare-action
         with:
-          node-version: '24'
+          version: ${{ inputs.version }}
 
       - name: Get npm cache directory
         id: npm-cache-dir

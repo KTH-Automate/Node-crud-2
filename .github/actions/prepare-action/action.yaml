@@ -1,0 +1,17 @@
+name: "prepare action"
+description: "Prepare the environment for the action"
+inputs:
+  version:
+    description: "Node.js version to use"
+    required: true
+    default: '24'
+
+runs:
+  using: composite
+
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: ${{ inputs.version }}
+  

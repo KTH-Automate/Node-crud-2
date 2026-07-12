@@ -27,6 +27,7 @@ jobs:
 
   DockerBuild:
     uses: ./.github/workflows/docker.yaml
+    secrets: inherit
   
   DcokerScan:
     uses: ./.github/workflows/trivy-scan.yaml

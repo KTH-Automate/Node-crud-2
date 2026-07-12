@@ -17,3 +17,16 @@ jobs:
     needs: build
     with:
       version: '24'
+  
+  codeScan:
+    uses: ./.github/workflows/sonar.yaml
+    
+  
+  # fileSacn:
+  #   # Trivy FS
+
+  # DockerBuild:
+  #   #
+  
+  # DcokerScan:
+  #   # Trivy Docker

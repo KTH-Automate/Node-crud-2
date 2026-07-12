@@ -1,4 +1,4 @@
-naem: SonarQube workflow
+name: SonarQube workflow
 
 on: workflow_call
 

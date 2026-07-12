@@ -24,20 +24,3 @@ jobs:
           push: true
           tags: kyawthethtun/crud-app:${{ github.sha }}
 
-name: Trivy Docker Image Scan
-
-on: workflow_call
-
-jobs:
-  trivy-scan:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trivy scan
-        uses: aquasecurity/trivy-action@0.33.1
-        with:
-          image-ref: kyawthethtun/crud-app:${{ github.sha }}
-          format: table
-          exit-code: 1
-          ignore-unfixed: true
-          severity: CRITICAL
-

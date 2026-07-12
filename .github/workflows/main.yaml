@@ -19,8 +19,31 @@ jobs:
       version: '24'
   
   codeScan:
-    uses: ./.github/workflows/sonar.yaml
-    secrets: inherit
+    name: SonarQube
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Print SONAR_TOKEN
+        run: echo $SONAR_TOKEN
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@7006c4492b2e0ee0f816d36501671557c97f5995 # v8.1.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
+        with:
+          projectBaseDir: .
+          args: >
+            -Dsonar.projectKey=KTH-Automate_Node-crud-2
+            -Dsonar.sources=src
+            -Dsonar.organization=kth-automate
     
   
   # fileSacn:

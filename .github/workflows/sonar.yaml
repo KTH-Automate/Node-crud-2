@@ -23,4 +23,4 @@ jobs:
           args: >
             -Dsonar.projectKey=KTH-Automate_Node-crud-2
             -Dsonar.sources=src
-            -Dsonar.organization=KTH-Automate
+            -Dsonar.organization=kth-automate
